@@ -7,15 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/consulta.css">
   <link rel="stylesheet" href="css/common.css">
+  <script src="js/vendor/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
-	<img src="img/onpe1.jpg" id="img_onpe"></img>
+	<div id="cambiarimagen">
+	<img src="img/onpe1.jpg" class="img_onpe"></img>
+	<img src="img/onpe2.svg" style="display: none" class="img_onpe"></img>
+	</div>
 	<h2 class="titulo" style="width: 80%; padding-left: 150px;">Consulta tu lugar de votación y si eres miembro de mesa</h2>
 	<input placeholder="Ingrese su DNI" name="dni" id="dni_input">
 	</br>
 	<a href="resultado.html"><button class="button">Consultar</button></a>
 	
+	<script>
+		$(document).ready(function(){
+			$('#cambiarimagen').click(
+				function(){
+					$("img").toggle();
+				}
+			)
+		});
+	</script>
+	
 </body>
-
 </html>
