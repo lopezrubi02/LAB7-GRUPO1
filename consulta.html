@@ -8,17 +8,21 @@
   <link rel="stylesheet" href="css/consulta.css">
   <link rel="stylesheet" href="css/common.css">
   <script src="js/vendor/jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body>
 	<div id="cambiarimagen">
-	<img src="img/onpe1.jpg" class="img_onpe"></img>
-	<img src="img/onpe2.svg" style="display: none" class="img_onpe"></img>
+		<img src="img/onpe1.jpg" class="img_onpe"></img>
+		<img src="img/onpe2.svg" style="display: none" class="img_onpe"></img>
 	</div>
 	<h2 class="titulo" style="width: 80%; padding-left: 150px;">Consulta tu lugar de votación y si eres miembro de mesa</h2>
 	<form action="resultado.html" method="POST">
-		<input placeholder="Ingrese su DNI" name="dni" id="dni_input">
-		<div class="invalid-feedback" style="display: none" id="error_message">El DNI ingresado no es válido</div>
+		<div>
+			<input placeholder="Ingrese su DNI" name="dni" id="dni_input">
+		</div>
+		<div class="error_message" style="display: none" id="error_message">
+		El DNI ingresado no es válido</div>
 		</br>
 		<button class="button" id="consulta" type="submit">Consultar</button>
 		
@@ -31,6 +35,18 @@
 					$("img").toggle();
 				}
 			)
+			/*$("#consulta").click(function () {
+			
+				var dniobtenido = $("#dni_input").val();
+				
+				var cant = dniobtenido.length;
+				console.log(cant);
+				if(cant != 8){
+					$("#dni_input").css('border-color','red');
+					$("#error_message").css('display','inline');
+					return false;
+				}
+			}*/
 		});
 		
 		
