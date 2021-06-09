@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/resultado.css">
   <link rel="stylesheet" href="css/common.css">
   <script src="js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="js/resultado.js"></script>
+  
 </head>
 
 <body>
@@ -31,6 +33,49 @@
 		</div>
 	</div>
 	<a href="consulta.html"><button class="button">Regresar</button></a>
+	
+	
+	<script>
+		$(document).ready(function(){
+			
+			var arrayNombres = ["Jesús", "Alejandro", "Andrea", "Bruno", "Daniel", "Víctor", "Sofía", "Alonso", "Israel", "Mayra"];
+			var cantN = arrayNombres.length;
+			var arrayApellidos = ["Gayoso", "Morterero", "Montes", "Barrios", "Sánchez", "Alcabú", "Barrios", "Sáez", "Obregón", "Franco"]
+			var cantA = arrayApellidos.length;
+			
+			var nombre = arrayNombres[Math.floor(Math.random()*(cantN))];
+			var ap1 = arrayApellidos[Math.floor(Math.random()*(cantA))];
+			var ap2 = arrayApellidos[Math.floor(Math.random()*(cantA))];
+			
+			var nombrecompleto = nombre + ' ' + ap1 + ' ' + ap2;
+			$('#nombregenerado').text(nombrecompleto)
+			
+			var arrayLocales = ["Pontificia Universidad Católica del Perú",
+			  "Colegio San Agustín",
+			  "Campo de Marte",
+			  "Estadio Nacional",
+			  "Residencial San Felipe",
+			  "Estadio Daniel Alcides Carrión"
+			]
+			
+			var cant = arrayLocales.length;
+			var local = arrayLocales[Math.floor(Math.random()*(cant))];
+			$('#lugargenerado').text(local)
+			
+			var numaleatorio1 = Math.floor(Math.random()*(8))+1;
+			var numaleatorio2 = Math.floor(Math.random()*(10));
+			var numaleatorio3 = Math.floor(Math.random()*(10));
+			
+			var num1 = numaleatorio1.toString();
+			var num2 = numaleatorio2.toString();
+			var num3 = numaleatorio3.toString();
+			
+			var mesa = num1 + num2 + num3;
+			
+			$('#mesagenerada').text(mesa)
+		});
+	</script>
+	
 </body>
 
 </html>
