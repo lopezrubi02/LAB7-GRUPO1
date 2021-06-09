@@ -16,9 +16,13 @@
 	<img src="img/onpe2.svg" style="display: none" class="img_onpe"></img>
 	</div>
 	<h2 class="titulo" style="width: 80%; padding-left: 150px;">Consulta tu lugar de votación y si eres miembro de mesa</h2>
-	<input placeholder="Ingrese su DNI" name="dni" id="dni_input">
-	</br>
-	<a href="resultado.html"><button class="button">Consultar</button></a>
+	<form action="resultado.html" method="POST">
+		<input placeholder="Ingrese su DNI" name="dni" id="dni_input">
+		<div class="invalid-feedback" style="display: none" id="error_message">El DNI ingresado no es válido</div>
+		</br>
+		<button class="button" id="consulta" type="submit">Consultar</button>
+		
+	</form>
 	
 	<script>
 		$(document).ready(function(){
@@ -28,6 +32,9 @@
 				}
 			)
 		});
+		
+		
+	
 	</script>
 	
 </body>

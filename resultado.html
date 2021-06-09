@@ -26,10 +26,14 @@
 				<div class="card-text" id="mesagenerada">135</div>
 			</div>
 		</div>
-		<div class="card">
+		<div class="card" id="miembrodemesa">
 			<div class="card-data">
 				<h1 class="card-title" id="miembro">Pase el mouse encima para conocer si es miembro de mesa</h1>
+				<div class="card-title" style="display: none" id="esonoes">Usted no es miembro de mesa</div>
+				</br>
+				<div class="card-text" style="display: none" id="cargogenerado"></div>
 			</div>
+			
 		</div>
 	</div>
 	<a href="consulta.html"><button class="button">Regresar</button></a>
@@ -73,6 +77,31 @@
 			var mesa = num1 + num2 + num3;
 			
 			$('#mesagenerada').text(mesa)
+			
+			
+			var arrayCargos = ["Presidente", "Secretario", "Tercer Miembro", "Primer Suplente", "Segundo Suplente", "Tercer Suplente"]
+						var cant2 = arrayCargos.length;
+						var cargo = arrayCargos[Math.floor(Math.random()*(cant2))];
+						
+			$('#miembrodemesa').hover(
+				
+				function(){
+					
+					var siono = Math.floor(Math.random()*(2));
+					
+					if(siono = 1){
+						$('#esonoes').text("Usted sí es miembro de mesa")
+						
+						$('#cargogenerado').text(cargo)
+						$("#cargogenerado").css('display','inline');
+						
+					}
+					$("#esonoes").css('display','inline');
+					
+					$("#miembro").css('display','none');
+				}
+			)
+			
 		});
 	</script>
 	
